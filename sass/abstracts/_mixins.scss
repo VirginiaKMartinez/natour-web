@@ -1,0 +1,10 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+//Este mixin se usa para prevenir que cuando se maqueta con FLOAT la altura de los bloques se resetea a 0px.
+//Con esta solución se previene ese comportamiento.
+//Para aplicarlo se añade en el código que se necesite como @include clearfix y listo.
