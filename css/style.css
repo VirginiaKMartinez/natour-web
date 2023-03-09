@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: inherit; }
 
+* {
+  margin-block-start: 0;
+  margin-block-end: 0; }
+
 /* Here we rewrite the default font-size of the browser, which defaults to 16px. The idea is to reset it to 10px so that the px to rem conversions are easier. This way you only do the calculation with 10 and not with 16 which is more complicated. But we can't just put 10px here because it locks the zoom, and users who zoom would not be able to use it if we put an absolute unit like pixels. So we convert it to % to keep it dynamic. The equivalence of putting 10px is 62.5% which represents the same and is also a good practice. */
 html {
   font-size: 62.5%; }
@@ -79,11 +83,27 @@ body {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(51, 51, 51, 0.2); }
 
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
 .u-center-text {
   text-align: center; }
 
-.u-margin-bottom-8 {
+.u-margin-bottom-big {
   margin-bottom: 8rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -127,6 +147,29 @@ body {
 .btn--animated {
   animation: moveInBotton 0.5s ease-out 0.75s;
   animation-fill-mode: backwards; }
+
+.btn-text:link, .btn-text:visited {
+  font-display: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  transition: all 0.2s; }
+
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #fdfdfd;
+  box-shadow: 0 1rem 2rem rgba(51, 51, 51, 0.15);
+  transform: translate(-2px); }
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(51, 51, 51, 0.15);
+  transform: translate(-2px); }
+
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 0.5rem 1rem rgba(51, 51, 51, 0.4); }
 
 .header {
   height: 95vh;
